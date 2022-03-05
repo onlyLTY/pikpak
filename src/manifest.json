@@ -2,15 +2,15 @@
   "background_color": "#ffffff",
   "dir": "ltr",
   "display": "standalone",
-  "name": "morax-xyc.github",
+  "name": "Pikpak网盘",
   "orientation": "any",
   "scope": "/",
-  "short_name": "morax-xyc.github",
+  "short_name": "Pikpak",
   "start_url": "/",
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "images/300x300.png",
+      "src": "assts/logo.png",
       "type": "image/png",
       "sizes": "300x300"
     }
