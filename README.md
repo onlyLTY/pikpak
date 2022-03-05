@@ -11,7 +11,7 @@
  * [我的修改版](https://morax-xyc.github.io/pikpak/)
 
 ## 安装教程
-  * [教程](https://www.tjsky.net/?p=201)
+  * [tjsky的教程](https://www.tjsky.net/?p=201)
 
 ## 对原版代码的修改
  * 恢复“资源库”功能
