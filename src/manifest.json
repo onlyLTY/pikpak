@@ -10,7 +10,7 @@
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "/src/assets/300x300.png",
+      "src": "https://www.mypikpak.com/logo.png",
       "type": "image/png",
       "sizes": "300x300"
     }
