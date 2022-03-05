@@ -10,7 +10,7 @@
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "assts/logo.png",
+      "src": "assets/logo.png",
       "type": "image/png",
       "sizes": "300x300"
     }
