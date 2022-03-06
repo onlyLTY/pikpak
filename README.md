@@ -15,6 +15,8 @@
 
 ## PWA使用
 
+详见[我的博客](https://www.morax-xyc.com/post/957f217b/)
+
 ###  IOS版
 
 打开[pikpak 第三方网页版](https://morax-xyc.github.io/pikpak/)，点击下方分享按钮，找到“添加到主屏幕”，在弹出的页面上点击“添加”，即可在桌面生成pikpak pwa应用，体验基本与原生应用一致。
