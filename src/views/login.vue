@@ -24,22 +24,21 @@
           </n-form-item>
           <n-form-item label="">
             <a target="_blank" href="https://i.mypikpak.com/v1/file/center/account/v1/password/?type=forget_password&locale=zh-cn" class="forget-password">忘记密码</a>
-            <router-link to="/register" class="register">注册</router-link>
-            <a href="javascript:;" @click="getApk">下载注册得5天VIP</a>
+            <a href="javascript:;" @click="getApk">去下载注册得5天VIP</a>
           </n-form-item>
         </n-form>
         <div class="login-other">
           <n-space inline>
-            <n-tooltip >
-               <template #trigger>
-                 <router-link to="sms">
-                   <n-icon color="#306eff" :size="32">
-                    <phone></phone>
-                   </n-icon>
-                 </router-link>
-               </template>
-               手机登陆
-             </n-tooltip>
+          <n-tooltip >
+              <template #trigger>
+                <router-link to="sms">
+                  <n-icon color="#306eff" :size="32">
+                   <phone></phone>
+                  </n-icon>
+                </router-link>
+              </template>
+              手机登陆
+            </n-tooltip>
             <n-tooltip >
               <template #trigger>
                 <n-icon color="#306eff" :size="32">
@@ -59,12 +58,13 @@
 import { ref } from '@vue/reactivity';
 import { NForm, NFormItem, NInput, NButton, useMessage, NCheckbox, useDialog, NTooltip, NIcon, NSpace } from 'naive-ui'
 import http from '../utils/axios'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { BrandGoogle, Phone } from '@vicons/tabler'
 const loginData = ref({
   username: '',
   password: ''
 })
+const route  = useRoute()
 const loading = ref(false)
 const router = useRouter()
 const message = useMessage()
@@ -89,6 +89,7 @@ const loginPost = () => {
         }
         message.success('登录成功')
         router.push('/')
+        router.push((route.query.redirect || '/') + '')
       }
     })
     .catch(() => {
