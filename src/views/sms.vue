@@ -11,7 +11,7 @@
       <div class="login-box">
         <n-form label-align="left" style="padding-top: 30px;" :model="loginData" :rules="rules" ref="formRef" label-placement="left" label-width="0" class="login-form">
           <n-form-item path="email">
-            <n-input v-model:value="loginData.phone_number" placeholder="请输入区号加手机号如+8615113254562"></n-input>
+            <n-input v-model:value="loginData.phone_number" placeholder="请输入区号加手机号如+8613988888888"></n-input>
           </n-form-item>
           <n-form-item path="verification_code">
             <n-input-group>
@@ -19,9 +19,9 @@
               <n-button @click="sendCode" :disabled="time < 60" :loading="codeLoading">{{ time >= 60 ? '发送验证码' : ('重新发送 ' + time + 's')}}</n-button>
             </n-input-group>
           </n-form-item>
-          <!-- <n-form-item label="" v-if="!isUser">
+          <n-form-item label="" v-if="!isUser">
             <n-checkbox v-model:checked="invite">接受邀请获得10天vip</n-checkbox>
-          </n-form-item> -->
+          </n-form-item>
           <n-form-item>
             <n-button type="primary" class="block" :loading="loading" @click="register">登录</n-button>
           </n-form-item>
@@ -115,7 +115,7 @@ const sendCode = () => {
   if(!loginData.value.phone_number) {
     return false
   } else if(loginData.value.phone_number.indexOf('+') === -1) {
-    message.error('请输入区号加手机号如+8615113254562')
+    message.error('请输入区号加手机号如+8613988888888')
     return false
   } else {
     loginData.value.captcha_token = ''
@@ -186,7 +186,9 @@ const register = (e:Event) => {
             }
             http.post(url, data)
               .then((res:any) => {
-                vipInvite(res.data)
+                if(invite.value && !isUser.value) {
+                  vipInvite(res.data)
+                }
                 window.localStorage.setItem('pikpakLogin', JSON.stringify(res.data))
                 window.localStorage.removeItem('pikpakLoginData')
                 message.success('登录成功')
